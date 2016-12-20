@@ -1,0 +1,6 @@
+ User sees empty game board displaying "Click new game to play"
+  -User clicks new game.
+  -"Current player" displays "black" and buttons above the game board labeled "drop here" appear
+  - User clicks "drop here" over the first row and a black piece appears at the bottom of the first row on the game board.
+  - The second player does the same thing and a red piece appears above the black piece
+  -The game continues until there are four reds in a row horizontally, at which point the game stops and displays "red is the winner!"

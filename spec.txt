@@ -1,0 +1,35 @@
+Game Engine
+  board
+    1. An array consisting of 7 arrays of size 6 filled with null
+    2. "b" and "r" are stored for player pieces
+  player
+    1. Stores the value of the current player with initial value of "b"
+  resetGame()
+    1. Empties the board of all pieces
+    2. Resets currentPlayer to black
+    3. Sets gameOver to false
+  togglePlayer()
+    1. If player is b, change to r
+    2. If player is r, change to b
+  isValidMove()
+    1. If the game is not over:
+      1.1 Returns true if the space is in a non-filled column
+      1.2 Returns false if the indicated column is full
+    2. If the game is over, returns false
+  checkForVictory()
+    1. Returns true if:
+      1.1 checkLeft() and checkRight() r
+  checkLeft()
+  checkRight()
+  checkUp()
+  checkDown()
+  makeMove(columnNumber)
+
+View Controller
+  refreshBoardView()
+  flashMessage()
+  clearFlash()
+
+Game controller
+  onClickNewGame()
+  onClickDropPiece()
