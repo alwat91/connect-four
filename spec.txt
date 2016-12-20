@@ -16,14 +16,22 @@ Game Engine
       1.1 Returns true if the space is in a non-filled column
       1.2 Returns false if the indicated column is full
     2. If the game is over, returns false
-  checkForVictory()
+  checkForVictory(position)
     1. Returns true if:
-      1.1 checkLeft() and checkRight() r
-  checkLeft()
-  checkRight()
-  checkUp()
-  checkDown()
+      1.1 checkLeft() and checkRight() together return a value of 3 or more
+      1.2 checkDown() and checkUp() together return a value of 3 or more
+  checkLeft(position)
+    1. Returns the number of same color pieces in a row to the left
+  checkRight(position)
+    1. Returns the number of same color pieces in a row to the right
+  checkUp(position)
+    1. Returns the number of same color pieces in a row above
+  checkDown(position)
+    1. Returns the number of same color pieces in a row below
   makeMove(columnNumber)
+    1. If the move is valid:
+      1.1 Fill the indicated column array with a piece of color equal to player
+      1.2 If the move is a winning move, set gameOver to true 
 
 View Controller
   refreshBoardView()
@@ -33,3 +41,4 @@ View Controller
 Game controller
   onClickNewGame()
   onClickDropPiece()
+  ******CHECK MVP REQS******
