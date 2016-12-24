@@ -3,7 +3,7 @@ Based on Tic Tac Toe game structure from Matt Brendzel, General Assembly 2016
 
 Game Engine
   board
-    1. An array consisting of 7 arrays of size 6 filled with null
+    1. An array consisting of 7 arrays (columns) of size 6 (rows) filled with null
     2. "b" and "r" are stored for player pieces
   player
     1. Stores the value of the current player with initial value of "b"
