@@ -3,8 +3,7 @@
 }
 
 .space {
-  background-color: grey;
-  /*block-size: 10;*/
+  background-color: LightBlue;
   height: 80px;
   width: 80px;
   border: 4px solid black;
@@ -16,12 +15,14 @@
 
 .board {
   margin: 0 auto;
-  width: 50%;
+  width: 616px;
 }
 
 h1 {
   margin: 0 auto;
-  width: 50%;
+  width: 616px;
+  font-family: Helvetica sans-serif;
+  font-size: 45px;
 }
 
 .black-piece {
@@ -40,5 +41,10 @@ h1 {
   margin: 5px auto;
 }
 button {
-  width: 75%;
+  font-size: 18px;
+  width: 80px;
+}
+#new-game{
+  margin: 0 auto;
+  float: right;
 }

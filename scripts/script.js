@@ -7,6 +7,7 @@ var gameEngine = {
     this.board = [[], [], [], [], [], [], []];
     this.player = "b";
     this.gameOver = false;
+    viewEngine.clearFlash();
 
   },
 
@@ -23,6 +24,7 @@ var gameEngine = {
   isValidMove: function(columnNumber){
     if(!this.gameOver){
       if(!this.board[columnNumber] || this.board[columnNumber].length < 6){
+        viewEngine.clearFlash();
         return true;
       }
       viewEngine.flashMessage("Please choose a column that isn't full.");
@@ -89,6 +91,10 @@ var gameEngine = {
 
   },
 
+  checkDiag: function(columnNumber){
+
+  },
+
   makeMove: function(columnNumber){
     if(this.isValidMove(columnNumber)){
       this.board[columnNumber].push(this.player);
@@ -140,12 +146,6 @@ var gameController = {
   onClickDropPiece: function(columnNumber){
     var columnNumber = $(this).attr('data-columns');
     var isValidMove = gameEngine.makeMove(columnNumber-1);
-    // if(!isValidMove){
-    //   viewEngine.flashMessage("Please choose a column that isn't full.")
-    // }
-    // else{
-    //   viewEngine.clearFlash();
-    // }
     viewEngine.refreshBoardView();
 
   }
