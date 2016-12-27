@@ -22,7 +22,7 @@ var gameEngine = {
 
   isValidMove: function(columnNumber){
     if(!this.gameOver){
-      if(!this.board[columnNumber][6]){
+      if(!this.board[columnNumber] || this.board[columnNumber].length <= 6){
         return true;
       }
     }
@@ -129,11 +129,18 @@ var gameController = {
     viewEngine.refreshBoardView();
   },
 
-  onClickDropPiece: function(){
-
+  onClickDropPiece: function(columnNumber){
+    // var columnNumber = $(this).attr('data-columns');
+    var isValidMove = gameEngine.makeMove(this.columnNumber);
+    if(!isValidMove){
+      viewEngine.flashMessage("Please choose a column that isn't full.")
+    }
+    viewEngine.refreshBoardView();
   }
 }
 
 window.onload = function(){
   $('#new-game').on('click', gameController.onClickNewGame);
+  $('.play-button').on('click', gameController.onClickDropPiece)
+
 }
