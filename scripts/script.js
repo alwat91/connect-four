@@ -112,7 +112,7 @@ var viewEngine = {
   },
 
   flashMessage: function(message){
-
+    $('.flash-msg').html(message).css('display', 'block');
   },
 
   clearFlash: function(){
