@@ -29,24 +29,34 @@ var gameEngine = {
     return false;
   },
 
-  checkForVictory: function(position){
-    if(this.checkLeft(position) + this.checkRight(position) >= 4){
+  checkForVictory: function(columnNumber){
+    if(this.checkLeft(columnNumber) + this.checkRight(columnNumber) >= 3){
       return true;
     }
-    if(this.checkUp(position) + this.checkRight(position) >= 4){
+    if(this.checkUp(columnNumber) + this.checkRight(columnNumber) >= 3){
       return true;
     }
     return false;
 
   },
-  checkLeft: function(position){
+  checkLeft: function(columnNumber){
+    var sameCount = 0;
+    var rowNumber = this.board[columnNumber].length-1;
+    for(var i = columnNumber-1; columnNumber >= 0; i--){
+      if(this.board[i][rowNumber] == this.player){
+        sameCount++;
+      }
+      else{
+        break;
+      }
+    }
+    return sameCount;
+  },
+  checkRight: function(columnNumber){
 
   },
-  checkRight: function(position){
-
-  },
-  checkUp: function(position){},
-  checkDown: function(position){},
+  checkUp: function(columnNumber){},
+  checkDown: function(columnNumber){},
   makeMove: function(columnNumber){}
 
 }
