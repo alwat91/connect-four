@@ -28,9 +28,15 @@ var gameEngine = {
     }
     return false;
   },
-  
-  checkForVictory: function(position){
 
+  checkForVictory: function(position){
+    if(this.checkLeft(position) + this.checkRight(position) >= 4){
+      return true;
+    }
+    if(this.checkUp(position) + this.checkRight(position) >= 4){
+      return true;
+    }
+    return false;
 
   },
   checkLeft: function(position){
