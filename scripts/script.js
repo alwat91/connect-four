@@ -1,10 +1,10 @@
 var gameEngine = {
-  board:  Array(7).fill([]),
+  board:  [[], [], [], [], [], [], []],
   player: "b",
   gameOver: false,
 
   resetGame: function(){
-    this.board = Array(7).fill([]);
+    this.board = [[], [], [], [], [], [], []];
     this.player = "b";
     this.gameOver = false;
 
@@ -22,7 +22,10 @@ var gameEngine = {
 
   isValidMove: function(columnNumber){
     if(!this.gameOver){
-      if(!this.board[columnNumber] || this.board[columnNumber].length <= 6){
+      if(!this.board[columnNumber]){
+        return true;
+      }
+      if(this.board[columnNumber].length <= 6){
         return true;
       }
     }
