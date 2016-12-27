@@ -22,12 +22,17 @@ var gameEngine = {
 
   isValidMove: function(columnNumber){
     if(!this.gameOver){
-      if(!this.board[columnNumber]){
+      if(!this.board[columnNumber] || this.board[columnNumber].length < 6){
         return true;
       }
-      if(this.board[columnNumber].length <= 6){
-        return true;
-      }
+      viewEngine.flashMessage("Please choose a column that isn't full.");
+      return false;
+    }
+    if(this.player == "r"){
+      viewEngine.flashMessage("The red player has won!");
+    }
+    else{
+      viewEngine.flashMessage("The black player has won!");
     }
     return false;
   },
@@ -133,12 +138,15 @@ var gameController = {
   },
 
   onClickDropPiece: function(columnNumber){
-    // var columnNumber = $(this).attr('data-columns');
-    var isValidMove = gameEngine.makeMove(columnNumber);
+    var columnNumber = $(this).attr('data-columns');
+    var isValidMove = gameEngine.makeMove(columnNumber-1);
     // if(!isValidMove){
     //   viewEngine.flashMessage("Please choose a column that isn't full.")
     // }
-    // viewEngine.refreshBoardView();
+    // else{
+    //   viewEngine.clearFlash();
+    // }
+    viewEngine.refreshBoardView();
 
   }
 }
