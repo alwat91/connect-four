@@ -1,3 +1,41 @@
 .flash-msg {
   display: none;
 }
+
+.space {
+  background-color: grey;
+  /*block-size: 10;*/
+  height: 80px;
+  width: 80px;
+  border: 4px solid black;
+}
+
+.column {
+  float: left;
+}
+
+.board {
+  margin: 0 auto;
+  width: 50%;
+}
+
+h1 {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.black-piece {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: black;
+  margin: 5px auto;
+}
+
+.red-piece {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: red;
+  margin: 5px auto;
+}
