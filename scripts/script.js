@@ -33,7 +33,7 @@ var gameEngine = {
     if(this.checkLeft(columnNumber) + this.checkRight(columnNumber) >= 3){
       return true;
     }
-    if(this.checkUp(columnNumber) + this.checkRight(columnNumber) >= 3){
+    if(this.checkDown(columnNumber)  >= 3){
       return true;
     }
     return false;
