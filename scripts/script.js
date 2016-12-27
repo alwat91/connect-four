@@ -80,6 +80,19 @@ var gameEngine = {
     return sameCount;
 
   },
-  makeMove: function(columnNumber){}
+
+  makeMove: function(columnNumber){
+    if(this.isValidMove(columnNumber)){
+      this.board[columnNumber].push(this.player);
+      if(this.checkForVictory(columnNumber)){
+        this.gameOver = true;
+      }
+      else{
+        this.togglePlayer();
+      }
+      return true;
+    }
+    return false;
+  }
 
 }
