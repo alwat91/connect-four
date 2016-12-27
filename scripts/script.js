@@ -100,12 +100,15 @@ var gameEngine = {
 var viewEngine = {
   refreshBoardView: function(){
     for(var i = 0; i < gameEngine.board.length; i++){
-      for(var j = 0; j < gameEngine.board[i].length; j++){
+      for(var j = 0; j < 6; j++){
         if(gameEngine.board[i][j] == "b"){
           $('.board').children().eq(i).children().eq(Math.abs(j-6)).html("<div class='black-piece'></div>");
         }
-        if(gameEngine.board[i][j] == "r"){
+        else if(gameEngine.board[i][j] == "r"){
           $('.board').children().eq(i).children().eq(Math.abs(j-6)).html("<div class='red-piece'></div>");
+        }
+        else{
+          $('.board').children().eq(i).children().eq(Math.abs(j-6)).html("");
         }
       }
     }
@@ -118,4 +121,19 @@ var viewEngine = {
   clearFlash: function(){
     $('.flash-msg').html('').css('display', 'none');
   }
+}
+
+var gameController = {
+  onClickNewGame: function(){
+    gameEngine.resetGame();
+    viewEngine.refreshBoardView();
+  },
+
+  onClickDropPiece: function(){
+
+  }
+}
+
+window.onload = function(){
+  $('#new-game').on('click', gameController.onClickNewGame);
 }
