@@ -131,11 +131,12 @@ var gameController = {
 
   onClickDropPiece: function(columnNumber){
     // var columnNumber = $(this).attr('data-columns');
-    var isValidMove = gameEngine.makeMove(this.columnNumber);
-    if(!isValidMove){
-      viewEngine.flashMessage("Please choose a column that isn't full.")
-    }
-    viewEngine.refreshBoardView();
+    var isValidMove = gameEngine.makeMove(columnNumber);
+    // if(!isValidMove){
+    //   viewEngine.flashMessage("Please choose a column that isn't full.")
+    // }
+    // viewEngine.refreshBoardView();
+
   }
 }
 
