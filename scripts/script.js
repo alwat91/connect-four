@@ -1,10 +1,10 @@
 var gameEngine = {
-  board:  Array(7).fill(Array(6).fill(null)),
+  board:  Array(7).fill([]),
   player: "b",
   gameOver: false,
 
   resetGame: function(){
-    this.board = Array(7).fill(Array(6).fill(null));
+    this.board = Array(7).fill([]);
     this.player = "b";
     this.gameOver = false;
 
