@@ -65,8 +65,21 @@ var gameEngine = {
     }
     return sameCount;
   },
-  checkUp: function(columnNumber){},
-  checkDown: function(columnNumber){},
+
+  checkDown: function(columnNumber){
+    var sameCount = 0;
+    var rowNumber = this.board[columnNumber].length-1;
+    for(var i = rowNumber+1; i < this.board[columnNumber].length; i++){
+      if(this.board[columnNumber][i] && this.board[columnNumber][i] == this.player){
+        sameCount++;
+      }
+      else{
+        break;
+      }
+    }
+    return sameCount;
+
+  },
   makeMove: function(columnNumber){}
 
 }

@@ -27,8 +27,6 @@ Game Engine
     1. Returns the number of same color pieces in a row to the left
   checkRight(position)
     1. Returns the number of same color pieces in a row to the right
-  checkUp(position)
-    1. Returns the number of same color pieces in a row above
   checkDown(position)
     1. Returns the number of same color pieces in a row below
   makeMove(columnNumber)
