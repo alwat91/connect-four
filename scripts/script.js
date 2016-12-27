@@ -69,7 +69,7 @@ var gameEngine = {
   checkDown: function(columnNumber){
     var sameCount = 0;
     var rowNumber = this.board[columnNumber].length-1;
-    for(var i = rowNumber+1; i < this.board[columnNumber].length; i++){
+    for(var i = rowNumber-1; i >= 0; i--){
       if(this.board[columnNumber][i] && this.board[columnNumber][i] == this.player){
         sameCount++;
       }
