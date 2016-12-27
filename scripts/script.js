@@ -116,6 +116,6 @@ var viewEngine = {
   },
 
   clearFlash: function(){
-
+    $('.flash-msg').html('').css('display', 'none');
   }
 }
