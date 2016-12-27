@@ -11,9 +11,12 @@ var gameEngine = {
   },
 
   togglePlayer: function(){
-    // if(player == "r"){
-    //   player
-    // }
+    if(this.player == "r"){
+      this.player = "b";
+    }
+    else{
+      this.player = "r";
+    }
 
   },
 
