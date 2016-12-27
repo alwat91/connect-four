@@ -14,7 +14,7 @@ Game Engine
   togglePlayer()
     1. If player is b, change to r
     2. If player is r, change to b
-  isValidMove()
+  isValidMove(columnNumber)
     1. If the game is not over:
       1.1 Returns true if the space is in a non-filled column
       1.2 Returns false if the indicated column is full

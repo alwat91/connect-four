@@ -20,10 +20,15 @@ var gameEngine = {
 
   },
 
-  isValidMove: function(){
-
-
+  isValidMove: function(columnNumber){
+    if(!this.gameOver){
+      if(!this.board[columnNumber][6]){
+        return true;
+      }
+    }
+    return false;
   },
+  
   checkForVictory: function(position){
 
 
