@@ -96,3 +96,26 @@ var gameEngine = {
   }
 
 }
+
+var viewEngine = {
+  refreshBoardView: function(){
+    for(var i = 0; i < gameEngine.board.length; i++){
+      for(var j = 0; j < gameEngine.board[i].length; j++){
+        if(gameEngine.board[i][j] == "b"){
+          $('.board').children().eq(i).children().eq(Math.abs(j-6)).html("<div class='black-piece'></div>");
+        }
+        if(gameEngine.board[i][j] == "r"){
+          $('.board').children().eq(i).children().eq(Math.abs(j-6)).html("<div class='red-piece'></div>");
+        }
+      }
+    }
+  },
+
+  flashMessage: function(message){
+
+  },
+
+  clearFlash: function(){
+
+  }
+}

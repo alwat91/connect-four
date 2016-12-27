@@ -39,3 +39,6 @@ h1 {
   background-color: red;
   margin: 5px auto;
 }
+button {
+  width: 75%;
+}
