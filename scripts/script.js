@@ -55,7 +55,7 @@ var gameEngine = {
   checkRight: function(columnNumber){
     var sameCount = 0;
     var rowNumber = this.board[columnNumber].length-1;
-    for(var i = columnNumber+1; i < columnNumber.length; i++){
+    for(var i = columnNumber+1; i < this.board.length; i++){
       if(this.board[i][rowNumber] && this.board[i][rowNumber] == this.player){
         sameCount++;
       }
