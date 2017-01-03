@@ -92,7 +92,17 @@ var gameEngine = {
   },
 
   checkDiag: function(columnNumber){
-
+    var sameCount = 0;
+    var rowNumber = this.board[columnNumber].length-1;
+    for(var i = columnNumber-1; i >= 0; i--){
+      if(this.board[i][rowNumber] && this.board[i][rowNumber] == this.player){
+        sameCount++;
+      }
+      else{
+        break;
+      }
+    }
+    return sameCount;
   },
 
   makeMove: function(columnNumber){
