@@ -58,6 +58,7 @@ var gameEngine = {
     return false;
 
   },
+
   checkLeft: function(columnNumber){
     var sameCount = 0;
     // Row number on the board is the length of the current column array since new pieces are pushed to the array
@@ -77,6 +78,7 @@ var gameEngine = {
     // Returns the number of same pieces to the left
     return sameCount;
   },
+
   checkRight: function(columnNumber){
     var sameCount = 0;
     var rowNumber = this.board[columnNumber].length-1;
